@@ -604,9 +604,9 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
       }
     }
 
-    if (_inputList[index!].isEmpty && _hintAvailable) {
+    if (_inputList[index!].isEmpty) {
       return Text(
-        widget.hintCharacter!,
+        _hintAvailable ? widget.hintCharacter! : '${index + 1}',
         key: ValueKey(_inputList[index]),
         style: _hintStyle,
       );
